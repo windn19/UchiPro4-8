@@ -37,7 +37,7 @@ db.create_all()
 
 def get_short():
     while True:
-        short = ''.join(random.choices(string.ascii_letters + string.ascii_letters, k=SHORT_LEN))
+        short = ''.join(random.choices(string.digits + string.ascii_letters, k=SHORT_LEN))
         if URLmodel.query.filter(URLmodel.short == short).first():
             continue
         return short
